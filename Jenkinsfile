@@ -16,16 +16,5 @@ pipeline {
         sh 'python3 publicacion.py'
       }
     }
-    stage('Reports') {
-            steps {
-                script {
-                        allure([
-                                includeProperties: false,
-                                jdk: '',
-                                properties: [],
-                                reportBuildPolicy: 'ALWAYS',
-                                results: [[path: 'target/allure-results']]
-                        ])
-                }
-            }
+  }
 }
